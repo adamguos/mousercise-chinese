@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)http://www.pbclibrary.org/mousing/m22.htm -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <meta name="Author" content="Palm Beach County Library System">
+    <title>鼠標體操</title>
+    <link rel="StyleSheet" href="./Mousing Around_ Mousercise_files/mousing.css" type="text/css">
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+        $scope.buttons = [
+          {
+            img: './Mousing Around_ Mousercise_files/b1b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b2b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b3b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b4b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b5b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b6b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b7b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b8b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b9b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b10b.gif',
+            pressed: false
+          },
+          {
+            img: './Mousing Around_ Mousercise_files/b11b.gif',
+            pressed: false
+          },
+        ];
+      });
+    </script>
+  </head>
+
+  <body ng-app='myApp' ng-controller='myCtrl'>
+    <table width="80%">
+      <tbody>
+        <tr>
+          <td colspan="11">
+            點擊下面所有的按鈕。<br><br>
+          </td>
+        </tr>
+
+        <tr>
+          <td ng-repeat='button in buttons' align='center' valign='middle'>
+            <img ng-src='{{button.img}}' ng-click='button.pressed = !button.pressed' width='24' height='24'>
+          </td>
+        </tr>
+
+        <tr>
+          <td ng-repeat='button in buttons' align='center' valign='middle'>
+            <img src='./Mousing Around_ Mousercise_files/checkmark2.gif' width='32' height='32' ng-hide='!button.pressed'>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan='11' align='center'>
+            <p>&nbsp;</p>
+            <a href='m23.html' ng-show='buttons[0].pressed && buttons[1].pressed && buttons[2].pressed && buttons[3].pressed && buttons[4].pressed && buttons[5].pressed && buttons[6].pressed && buttons[7].pressed && buttons[8].pressed && buttons[9].pressed && buttons[10].pressed'>
+              <img src='./Mousing Around_ Mousercise_files/continue.gif' width='132' height='24' border='0'>
+            </a>
+          </td>
+      </tbody>
+    </table>
+  </body>
+
+</html>

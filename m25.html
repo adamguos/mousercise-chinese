@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)http://www.pbclibrary.org/mousing/m25.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta http-equiv="content-language" content="en-us">
+    <meta name="Author" content="Palm Beach County Library System">
+    <title>鼠標體操</title>
+<link type="text/css" rel="StyleSheet" href="./Mousing Around_ Mousercise_files/bluecurve.css">
+<style type="text/css">
+
+body {
+	overflow:	hidden;
+	margin:		0;
+	border:		0;
+	padding:	20px;
+	width:		100%;
+	height:		100%;
+	background:	rgb(230,230,230);
+font-family:arial,sans-serif;
+font-weight:normal;
+color:black;
+}
+
+.color-picker {
+	background:	transparent;
+	width:120px;
+    position: relative;
+    left: 110px;
+}
+
+.color-picker td {
+	padding:	1px;
+}
+
+.dynamic-slider-control {
+	width:		auto;
+	height: 200px;
+	margin:		0;
+}
+
+.color-picker input {
+	text-align:	right;
+	width:		30px;
+}
+
+td    {font-family:arial,sans-serif;
+      color:black;
+}
+</style>
+
+<script type="text/javascript" src="./Mousing Around_ Mousercise_files/range.js.download"></script>
+<script type="text/javascript" src="./Mousing Around_ Mousercise_files/timer.js.download"></script>
+<script type="text/javascript" src="./Mousing Around_ Mousercise_files/slider.js.download"></script>
+</head>
+<body id="canvas" style="background-color: rgb(255, 255, 255);">
+<table>
+
+<tbody><tr><td>點擊並滑鼠標來改變該頁的背景顏色。改完之後，點擊 “繼續”。
+<br><br>
+</td>
+</tr>
+<tr>
+<td><table class="color-picker" cellspacing="2" cellpadding="0" border="0">
+<colgroup><col style="width: 20px">
+<col style="width: 20px">
+<col style="width: 20px">
+</colgroup><tbody><tr>
+	<td>
+		<div class="vertical dynamic-slider-control slider" id="red-slider" tabindex="1">
+			<input class="slider-input" id="red-slider-input">
+		<div class="line" style="left: 15px; top: 15.5px; height: 167px;"><div style="height: 165px;"></div></div><div class="handle" style="left: 10px; top: 0px;"><div>&nbsp;</div></div></div>
+	</td>
+
+	<td>
+		<div class="vertical dynamic-slider-control slider" id="green-slider" tabindex="3">
+			<input class="slider-input" id="green-slider-input">
+		<div class="line" style="left: 15px; top: 15.5px; height: 167px;"><div style="height: 165px;"></div></div><div class="handle" style="left: 10px; top: 0px;"><div>&nbsp;</div></div></div>
+	</td>
+
+	<td>
+		<div class="vertical dynamic-slider-control slider" id="blue-slider" tabindex="5">
+			<input class="slider-input" id="blue-slider-input">
+		<div class="line" style="left: 15.5px; top: 15.5px; height: 167px;"><div style="height: 165px;"></div></div><div class="handle" style="left: 10.5px; top: 0px;"><div>&nbsp;</div></div></div>
+	</td>
+
+</tr>
+</tbody></table></td></tr>
+<tr><td colspan="3"><a href="m26.html">繼續</a></td></tr>
+
+</tbody></table>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+// init code
+var r = new Slider(document.getElementById("red-slider"), document.getElementById("red-slider-input"),"vertical");
+r.setMaximum(255);
+var g = new Slider(document.getElementById("green-slider"), document.getElementById("green-slider-input"),"vertical");
+g.setMaximum(255);
+var b = new Slider(document.getElementById("blue-slider"), document.getElementById("blue-slider-input"),"vertical");
+b.setMaximum(255);
+
+
+
+r.onchange = g.onchange = b.onchange = function () {
+	var cr = document.getElementById("canvas");
+	cr.style.backgroundColor = "rgb(" + r.getValue() + "," +
+								g.getValue() + "," +
+								b.getValue() + ")";
+
+
+	if (typeof window.onchange == "function")
+		window.onchange();
+};
+
+r.setValue(255);
+g.setValue(255);
+b.setValue(255);
+
+// end init
+
+function setRgb(nRed, nGreen, nBlue) {
+	r.setValue(nRed);
+	g.setValue(nGreen);
+	b.setValue(nBlue);
+}
+
+function getRgb() {
+	return {
+		r:	r.getValue(),
+		g:	g.getValue(),
+		b:	b.getValue()
+	};
+}
+
+function fixSize() {
+	r.recalculate();
+	g.recalculate();
+	b.recalculate();
+}
+
+window.onresize = fixSize;
+
+fixSize();
+
+
+</script>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Mousing Around_ Mousercise_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4500748-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+</body></html>
